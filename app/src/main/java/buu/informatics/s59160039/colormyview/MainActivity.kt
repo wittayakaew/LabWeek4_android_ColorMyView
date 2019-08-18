@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +21,12 @@ class MainActivity : AppCompatActivity() {
             R.id.box_tree_text -> view.setBackgroundColor(Color.BLUE)
             R.id.box_four_text -> view.setBackgroundColor(Color.MAGENTA)
             R.id.box_five_text -> view.setBackgroundColor(Color.BLUE)
-            else -> view.setBackgroundColor(Color.GREEN)
+
+            R.id.button_red ->box_tree_text.setBackgroundResource(R.color.my_red)
+            R.id.button_green ->box_four_text.setBackgroundResource(R.color.my_green)
+            R.id.button_yellow ->box_five_text.setBackgroundResource(R.color.my_yellow)
+
+            else -> view.setBackgroundColor(Color.LTGRAY)
         }
     }
     private fun setListenner(){
@@ -29,13 +35,19 @@ class MainActivity : AppCompatActivity() {
         val boxtreeText = findViewById<TextView>(R.id.box_tree_text)
         val boxfourText = findViewById<TextView>(R.id.box_four_text)
         val boxfiveText = findViewById<TextView>(R.id.box_five_text)
+        val redBuuton =findViewById<TextView>(R.id.button_red)
+        val greenBuuton =findViewById<TextView>(R.id.button_green)
+        val yellowBuuton =findViewById<TextView>(R.id.button_yellow)
 
         val rootConstraintLayout = findViewById<View>(R.id.constraint_layout)
         val clickableView: List<View> =
-                listOf(boxOneText,boxTwoText,boxtreeText,boxfourText,boxfiveText,rootConstraintLayout)
+                listOf(boxOneText,boxTwoText,boxtreeText,boxfourText,boxfiveText,rootConstraintLayout
+                ,redBuuton,greenBuuton,yellowBuuton)
         for (item in clickableView){
             item.setOnClickListener{makeColor(it)}
         }
+
+
 
     }
 }
