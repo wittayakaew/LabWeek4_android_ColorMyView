@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity" android:id="@+id/box_tree_text">
+        tools:context=".MainActivity" android:id="@+id/constraint_layout">
 
     <TextView
             android:layout_width="0dp"
@@ -27,7 +27,7 @@
             android:text="@string/box_tree"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2" style="@style/whiteBox"
+            android:id="@+id/box_tree_text" style="@style/whiteBox"
             app:layout_constraintTop_toBottomOf="@+id/box_one_text"
             app:layout_constraintBottom_toTopOf="@+id/box_four_text"
             app:layout_constraintTop_toTopOf="@+id/box_two_text" app:layout_constraintStart_toEndOf="@+id/box_two_text"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/box_four_text"
             style="@style/whiteBox"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/box_tree_text"
             app:layout_constraintBottom_toTopOf="@+id/box_five_text"
             app:layout_constraintStart_toEndOf="@+id/box_two_text" android:layout_marginStart="@dimen/margin_wide"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="@dimen/margin_wide"
